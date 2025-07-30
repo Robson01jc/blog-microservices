@@ -1,16 +1,26 @@
-Startar minikube:
-- minikube start
+## Kubernetes commands
 
-Carregar uma imagem no mikube:
-- minikube image load IMAGE_NAME:TAG
+- Start minikube:  
+`minikube start`
 
-kubectl delete -f infra/k8s/
-kubectl apply -f infra/k8s/
+- Push image to docker hub:  
+`docker push robsonrc/posts`
 
-docker push robsonrc/posts
+- Load image to mikube:  
+`minikube image load IMAGE_NAME:TAG`
 
-kubectl rollout restart deployment <<deployment_name>>
+- Restart a service:  
+`kubectl rollout restart deployment posts-depl`
 
-minikube ip
+- Expose service to access from outside the cluster:  
+`minikube service posts-srv`
 
-minikube service posts-srv
+- Apply and delete config files:  
+`kubectl apply -f infra/k8s/`  
+`kubectl delete -f infra/k8s/`
+
+- Get cluster ip address:  
+`minikube ip`
+
+- Troubleshoot pod:
+`kubectl describe pod <<pod_name>>`
