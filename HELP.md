@@ -24,3 +24,12 @@
 
 - Troubleshoot pod:
 `kubectl describe pod <<pod_name>>`
+
+- Connect to a NodePort service:
+`minikube service <name-service> --url`
+
+- Open a tunnel:
+`minikube tunnel`
+
+- Restart Docker engine:
+`systemctl --user restart docker-desktop`
